@@ -1,0 +1,46 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+
+.user img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+    padding-left: 2rem;
+}
+
+.data p {
+    color: rgb(60, 60, 60);
+}
+
+.userName {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.userAge {
+    margin: 0;
+    color: rgb(120, 120, 120);
+}
+
+.control {
+    margin-left: auto;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}

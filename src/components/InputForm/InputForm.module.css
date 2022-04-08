@@ -1,0 +1,37 @@
+.inputForm {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.inputForm label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(60, 60, 60);
+}
+
+.inputForm input {
+    display: block;
+    width: 100%;
+    height: calc(1rem + (2 * 0.5rem));
+    margin: 1rem 0;
+    padding: 1px 1rem;
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: calc((1rem + (2 * 0.5rem)) / 2);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.inputForm input:focus {
+    background-color: rgb(230, 243, 255);
+}
+
+.inputForm input::-webkit-outer-spin-button,
+.inputForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.inputForm input[type=number] {
+  -moz-appearance: textfield;
+}
