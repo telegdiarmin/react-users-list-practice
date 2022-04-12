@@ -1,10 +1,9 @@
 .user {
+    padding: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: white;
     margin-bottom: 1rem;
-    padding: 2rem;
 }
 
 .user img {
@@ -43,4 +42,12 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+}
+
+.controlIcon {
+    color: rgb(60, 60, 60)
+}
+
+.controlIcon:hover {
+    color: rgb(120, 120, 120);
 }

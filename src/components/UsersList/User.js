@@ -6,6 +6,10 @@ import userAvatar from "../../assets/images/user-avatar.png"
 
 function User(props) {
 
+function onButtonClickHandler(event){
+    // console.log(event.target.id)
+    props.onRemoveUser(event.target.id);
+}
     return (
         <Card className={styles.user}>
             <div>
@@ -16,7 +20,7 @@ function User(props) {
                 <p className={styles.userAge}>{props.age} years old</p>
             </div>
             <div className={styles.control}>
-                <HighlightOffIcon />
+                <HighlightOffIcon onClick={onButtonClickHandler} id={props.id}/>
             </div>
         </Card>
     )

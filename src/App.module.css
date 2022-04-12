@@ -1,5 +1,6 @@
 .app {
     width: 50%;
+    max-width: 35rem;
     margin: 0 auto;
     padding-top: 2rem;
 }

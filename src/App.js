@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import InputForm from "./components/InputForm/InputForm";
 import UsersList from "./components/UsersList/UsersList";
 import { useState } from "react";
+import Backdrop from "./components/ErrorModal/Backdrop";
 
 function App() {
   const DUMMY_USERS = [
@@ -31,16 +32,18 @@ function App() {
     });
   }
 
-  function removeUserHandler(user) {}
+  function removeUserHandler(userId) {
+    setUsers((prevUsers) => {
+      const updatedUsers = prevUsers.filter((user) => user.id !== userId);
+      return updatedUsers;
+    });
+  }
 
   return (
     <div className={styles.app}>
-      <InputForm />
-      <UsersList
-        users={users}
-        onAddUser={addUserHandler}
-        onRemoveUser={removeUserHandler}
-      />
+      <Backdrop />
+      <InputForm onSubmitForm={addUserHandler} />
+      <UsersList users={users} onRemoveUser={removeUserHandler} />
     </div>
   );
 }
