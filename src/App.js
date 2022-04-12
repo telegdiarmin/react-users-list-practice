@@ -24,7 +24,28 @@ function App() {
     },
   ];
 
+  const [isValid, setIsValid] = useState({
+    valid: true,
+    message: "",
+  });
+
   const [users, setUsers] = useState(DUMMY_USERS);
+
+  function validateUserHandler(user) {
+    if (user.name.trim() == "" || user.age.trim() == "") {
+      setIsValid({
+        valid: false,
+        message: "Please enter a valid name and age (non-empty values).",
+      });
+    } else if (user.age < 0) {
+      setIsValid({
+        valid: false,
+        message: "Please enter a valid age (>0).",
+      });
+    } else {
+      addUserHandler(user);
+    }
+  }
 
   function addUserHandler(user) {
     setUsers((prevUsers) => {
@@ -39,10 +60,19 @@ function App() {
     });
   }
 
+  function resetModalHandler() {
+    setIsValid({
+      valid: true,
+      message: "",
+    });
+  }
+
   return (
     <div className={styles.app}>
-      <Backdrop />
-      <InputForm onSubmitForm={addUserHandler} />
+      {!isValid.valid && (
+        <Backdrop message={isValid.message} onModalReset={resetModalHandler} />
+      )}
+      <InputForm onSubmitForm={validateUserHandler} />
       <UsersList users={users} onRemoveUser={removeUserHandler} />
     </div>
   );

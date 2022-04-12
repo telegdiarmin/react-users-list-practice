@@ -2,10 +2,14 @@ import React from "react"
 import ErrorModal from "./ErrorModal";
 import styles from "./Backdrop.module.css"
 
-function Backdrop() {
+function Backdrop(props) {
+    function resetModalHandler(){
+        props.onModalReset();
+    }
+
     return(
         <div className={styles.backdrop}>
-            <ErrorModal/>
+            <ErrorModal message={props.message} onModalReset={resetModalHandler}/>
         </div>
     )
 };

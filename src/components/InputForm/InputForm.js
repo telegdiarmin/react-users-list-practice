@@ -4,7 +4,6 @@ import MainButton from "../UI/MainButton/MainButton";
 import styles from "./InputForm.module.css";
 
 function InputForm(props) {
-  
   const [userInput, setUserInput] = useState({
     enteredName: "",
     enteredAge: "",
