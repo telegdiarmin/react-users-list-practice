@@ -29,6 +29,10 @@ function InputForm(props) {
       id: Math.random().toString(),
     };
     props.onSubmitForm(userData);
+    setUserInput({
+      enteredName: "",
+      enteredAge: "",
+    })
   }
 
   return (
